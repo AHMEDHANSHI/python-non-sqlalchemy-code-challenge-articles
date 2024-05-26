@@ -9,15 +9,20 @@ class Author:
         self.name = name
 
     def articles(self):
+
         pass
 
     def magazines(self):
+        return 
         pass
 
     def add_article(self, magazine, title):
+
+
         pass
 
     def topic_areas(self):
+        return self
         pass
 
 class Magazine:
@@ -29,6 +34,7 @@ class Magazine:
         pass
 
     def contributors(self):
+
         pass
 
     def article_titles(self):
