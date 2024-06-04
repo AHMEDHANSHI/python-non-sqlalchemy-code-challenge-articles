@@ -20,9 +20,9 @@ class Article:
                 if 5 <= len(new_title) <= 50:
                     self._title = new_title
                 else:
-                    ValueError("Title must be between 5 and 50 characters")
+                    raise Exception("Title must be between 5 and 50 characters")
             else:
-                TypeError("Title must be a string")
+                raise Exception("Title must be a string")
             
     @property
     def author(self):
@@ -64,7 +64,7 @@ class Author:
                 if len(new_name):
                     self._name = new_name
                 else:
-                    ValueError("Name must be longer than 0 characters")
+                    raise Exception("Name must be longer than 0 characters")
             else:
                 TypeError("Name must be a string")
 
@@ -100,8 +100,10 @@ class Magazine:
         if isinstance(new_name, str):
             if 2 <= len(new_name) <= 16:
                 self._name = new_name
+               
+
             else: 
-                ValueError("Name must be between 2 and 16 characters")
+                raise Exception ("Name must be between 2 and 16 characters")
         else:
             TypeError("Name must be a string")   
         
@@ -115,9 +117,9 @@ class Magazine:
             if len(new_category):
                 self._category = new_category
             else:
-                ValueError("Category must be longer than 0 characters")
+                raise Exception ("Category must be longer than 0 characters")
         else:
-            TypeError("Category must be a string")   
+            raise Exception ("Category must be a string")   
 
     def articles(self):
         return [article for article in Article.all if self == article.magazine]
